@@ -42,7 +42,7 @@ function Tutorial() {
       <h1 className="text-4xl font-bold mb-4 text-orange-500">Tutorial</h1>
       <div className="max-w-2xl text-left">
         <p className="mb-4">
-          Welcome to Sign Orange Game! Pick 5 coins in each level to score
+          Welcome to Sign Orange Coin! Pick 5 coins in each level to score
           enough points to pass. Special Coins give more points, Ordinary Coins
           give less, and Blank Coins waste a try with 0 points.
         </p>
