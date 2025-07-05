@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-flip {
+  animation: flip 1.5s ease-in-out;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+/* Custom game grid class with media queries */
+.game-grid {
+  @apply grid grid-cols-7 gap-2; /* Default: 7x4 for PC */
+}
+
+@media (max-width: 767px) {
+  /* Mobile: 4x7 */
+  .game-grid {
+    @apply grid-cols-4 grid-rows-7 gap-1; /* Smaller gap for mobile */
+  }
+}
+
+/* Sticky pause button on mobile */
+.pause-button {
+  @apply mt-4; /* Default spacing for PC */
+}
+
+@media (max-width: 767px) {
+  .pause-button {
+    @apply fixed bottom-4 left-0 right-0 flex justify-center mt-0; /* Sticky on mobile */
+  }
+  .game-container {
+    @apply pb-16; /* Add padding to prevent overlap with sticky button */
+  }
+}
